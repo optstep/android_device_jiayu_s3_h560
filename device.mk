@@ -63,6 +63,8 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/sepolicy:root/sepolicy \
+    $(LOCAL_PATH)/rootdir/service_contexts:root/service_contexts \
     $(LOCAL_PATH)/rootdir/enableswap.sh:root/enableswap.sh \
     $(LOCAL_PATH)/rootdir/factory_init.project.rc:root/factory_init.project.rc \
     $(LOCAL_PATH)/rootdir/factory_init.rc:root/factory_init.rc \
@@ -74,7 +76,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.project.rc:root/init.project.rc \
     $(LOCAL_PATH)/rootdir/init.rc:root/init.rc \
     $(LOCAL_PATH)/rootdir/init.ssd.rc:root/init.ssd.rc \
-    $(LOCAL_PATH)/rootdir/init.xlog.rc:root/init.xlog.rc \
     $(LOCAL_PATH)/rootdir/meta_init.modem.rc:root/meta_init.modem.rc \
     $(LOCAL_PATH)/rootdir/meta_init.project.rc:root/meta_init.project.rc \
     $(LOCAL_PATH)/rootdir/meta_init.rc:root/meta_init.rc \
@@ -204,10 +205,6 @@ PRODUCT_PACKAGES += \
     libnl_2 \
     libtinyxml
 
-# Browser
-PRODUCT_PACKAGES += \
-    Gello
-
 # FMRadio
 PRODUCT_PACKAGES += \
     FmRadio \
@@ -225,9 +222,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
+# Messaging
+PRODUCT_PACKAGES += \
+    messaging
+
 # Lights
 PRODUCT_PACKAGES += \
     lights.mt6752
+
+# Sensor Calibration
+PRODUCT_PACKAGES += libem_sensor_jni
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -238,12 +242,8 @@ PRODUCT_PACKAGES += \
     make_ext4fs \
     resize2fs \
     setup_fs
-    
-# Sensor Calibration
-PRODUCT_PACKAGES += libem_sensor_jni
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=8
 
-# Dalvik/HWUI
-$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
-$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
+# Dalvik
+$(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)

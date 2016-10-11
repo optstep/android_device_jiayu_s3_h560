@@ -522,6 +522,7 @@ on boot
     chown system system /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
 
+    
     # Assume SMP uses shared cpufreq policy for all CPUs
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
@@ -547,6 +548,40 @@ on boot
     chown system system /sys/kernel/ipv4/tcp_rmem_max
     chown root radio /proc/cmdline
 
+    # PegasusQ governor
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/boost_freq
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/boost_lock_time
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/boost_mincpus
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/cpu_down_freq
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/cpu_down_rate
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/cpu_up_freq
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/cpu_up_rate
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/cpucore_table
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/down_differential
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/dvfs_debug
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/freq_step
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_freq_1_1
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_freq_2_0
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_freq_2_1
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_freq_3_0
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_freq_3_1
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_freq_4_0
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_lock
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_rq_1_1
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_rq_2_0
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_rq_2_1
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_rq_3_0
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_rq_3_1
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_rq_4_0
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/ignore_nice_load
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/io_is_busy
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/up_threshold
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/min_cpu_lock
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/max_cpu_lock
+    chown system system /sys/devices/system/cpu/cpufreq/pegasusq/sampling_rate
+
+    
     # Define default initial receive window size in segments.
     setprop net.tcp.default_init_rwnd 60
 

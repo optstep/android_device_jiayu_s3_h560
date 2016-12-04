@@ -171,3 +171,4 @@ ro.mtk_cam_mav_support=0
 ro.mtk_cam_vfb=0
 ro.mtk_live_photo_support=0
 ro.mtk_slidevideo_support=0
+ro.vold.umsdirtyratio=20

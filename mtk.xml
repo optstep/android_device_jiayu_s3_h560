@@ -13,6 +13,7 @@
   <remove-project name="CyanogenMod/android_packages_services_Telecomm" />
   <remove-project name="CyanogenMod/android_packages_services_Telephony" />
    <remove-project name="CyanogenMod/android_frameworks_rs" />
+ <remove-project name="CyanogenMod/android_system_netd" />
   
   <project path="bionic" name="xen0n/android_bionic_mtk" groups="pdk" />
   <project path="build" name="xen0n/android_build_mtk" groups="pdk" >
@@ -29,6 +30,7 @@
   <project path="packages/services/Telecomm" name="xen0n/android_packages_services_Telecomm_mtk" />
   <project path="packages/services/Telephony" name="xen0n/android_packages_services_Telephony_mtk" />
   <project path="frameworks/rs" name="xen0n/android_frameworks_rs_mtk" groups="pdk" />
+  <project path="system/netd" name="xen0n/android_system_netd_mtk" groups="pdk" />
 
   <!-- vim:set ai et ts=2 sw=2 sts=2 fenc=utf-8: -->
 </manifest>

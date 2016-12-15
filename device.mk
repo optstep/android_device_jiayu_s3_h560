@@ -147,6 +147,10 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_PACKAGES += \
       charger_res_images
 
+#gralloc extra
+PRODUCT_PACKAGES += \
+      gralloc_extra
+
 # Wifi
 PRODUCT_PACKAGES += \
     lib_driver_cmd_mt66xx \

@@ -16,7 +16,7 @@
  <remove-project name="CyanogenMod/android_system_netd" />
   
   <project path="bionic" name="xen0n/android_bionic_mtk" groups="pdk" />
-  <project path="build" name="xen0n/android_build_mtk" groups="pdk" >
+  <project path="build" name="sandstranger/android_build_mtk" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 

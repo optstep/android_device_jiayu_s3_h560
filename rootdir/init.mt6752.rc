@@ -33,8 +33,8 @@ on init
     mkdir /mnt/cd-rom 0000 system system
 
 # Change ION driver permission
-    chmod 0644 /dev/ion
-
+    chmod 0666 /dev/ion
+    
 # Vanzo:yinjun on: Tue, 31 Mar 2015 19:43:54 +0800
 # add remoteir
  chmod 0664 /dev/remote_ctrl_dev

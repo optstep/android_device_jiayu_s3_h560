@@ -234,6 +234,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.mt6752
 
+PRODUCT_PACKAGES += \
+    EngineerMode 
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck \

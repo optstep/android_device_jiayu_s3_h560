@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <remove-project name="LineageOS/android_bionic" />
   <remove-project name="LineageOS/android_build" />
   <remove-project name="LineageOS/android_system_core" />
   <remove-project name="LineageOS/android_frameworks_base" />
@@ -14,7 +13,6 @@
   <remove-project name="LineageOS/android_frameworks_native" />
 <remove-project name="LineageOS/android_frameworks_av" />
 
-  <project path="bionic" name="xen0n/android_bionic_mtk" groups="pdk" />
   <project path="build" name="sandstranger/android_build_mtk" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
@@ -25,7 +23,7 @@
   <project path="frameworks/av" name="sandstranger/android_frameworks_av_mtk" groups="pdk" />
   <project path="frameworks/native" name="sandstranger/android_frameworks_native_mtk" groups="pdk" />
   <project path="frameworks/opt/net/ims" name="xen0n/android_frameworks_opt_net_ims_mtk" groups="frameworks_ims,pdk-cw-fs,pdk-fs" />
-  <project path="frameworks/opt/telephony" name="xen0n/android_frameworks_opt_telephony_mtk" groups="pdk" />
+  <project path="frameworks/opt/telephony" name="sandstranger/android_frameworks_opt_telephony_mtk" groups="pdk" />
   <project path="packages/services/Telecomm" name="sandstranger/android_packages_services_Telecomm_mtk" />
   <project path="packages/services/Telephony" name="sandstranger/android_packages_services_Telephony_mtk" />
   <project path="system/netd" name="xen0n/android_system_netd_mtk" groups="pdk" />

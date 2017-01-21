@@ -148,10 +148,6 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_PACKAGES += \
       charger_res_images
 
-#gralloc extra
-PRODUCT_PACKAGES += \
-      gralloc_extra
-
 # Wifi
 PRODUCT_PACKAGES += \
     lib_driver_cmd_mt66xx \
@@ -218,6 +214,7 @@ PRODUCT_PACKAGES += \
     FmRadio \
     libmtkplayer
 
+
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
@@ -237,6 +234,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     EngineerMode 
 
+PRODUCT_PACKAGES += \
+    gralloc_extra
+
+PRODUCT_PACKAGES += \
+    YGPS
+
+    
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck \

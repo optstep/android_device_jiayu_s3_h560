@@ -27,4 +27,4 @@ init_daemon_domain(teei_daemon)
 allow teei_daemon kmsg_device:chr_file {open write};
 
 #define for mlsconstrain
-typeattribute teei_client_device mlstrustedobject;
+#typeattribute teei_client_device mlstrustedobject;

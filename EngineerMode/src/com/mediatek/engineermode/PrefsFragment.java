@@ -382,9 +382,7 @@ public class PrefsFragment extends PreferenceFragment {
             Log.i("@M_" + TAG, "Not show entry for DEVREG.");
         }
 
-        if (!FeatureSupport.isSupported(FeatureSupport.FK_WFD_SUPPORT)) {
-            removePreference(screen, "wfd_settings");
-        }
+         removePreference(screen, "wfd_settings");
 
         if (!FeatureSupport.isSupported(FeatureSupport.FK_LTE_DC_SUPPORT)) {
             removePreference(screen, "lte_config");

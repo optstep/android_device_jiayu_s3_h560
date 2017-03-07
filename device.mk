@@ -252,6 +252,16 @@ PRODUCT_PACKAGES += \
     power.default \
     power.mt6752
     
+# Display
+PRODUCT_PACKAGES += \
+    libion
+
+PRODUCT_PACKAGES += \
+    libtinyalsa
+
+ PRODUCT_PACKAGES += \
+    libtinycompress
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck \

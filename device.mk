@@ -217,9 +217,8 @@ PRODUCT_PACKAGES += \
 
 # FMRadio
 PRODUCT_PACKAGES += \
-    FmRadio \
-    libmtkplayer
-
+    libfmjni \
+    FmRadio
 
 # NFC
 PRODUCT_PACKAGES += \

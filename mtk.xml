@@ -17,7 +17,7 @@
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
-  <project path="external/stlport" name="LineageOS/android_external_stlport" revision="cm-13" />
+  <project path="external/stlport" name="LineageOS/android_external_stlport" revision="cm-13.0" />
   <project path="hardware/libhardware_legacy" name="sandstranger/android_hardware_libhardware_legacy_mtk" groups="pdk" />
   <project path="external/tinyalsa" name="sandstranger/android_external_tinyalsa" groups="pdk" />
   <project path="external/tinycompress" name="sandstranger/android_external_tinycompress_mtk" groups="pdk" />

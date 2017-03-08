@@ -3,10 +3,7 @@
 
   <remove-project name="AICP/system_core" />
   <remove-project name="AICP/frameworks_base" />
-  <remove-project name="CyanogenMod/android_frameworks_opt_net_ims" />
   <remove-project name="AICP/frameworks_opt_telephony" />
-  <remove-project name="AICP/packages_services_Telecomm" />
-  <remove-project name="AICP/packages_services_Telephony" />
  <remove-project name="CyanogenMod/android_system_netd" />
  <remove-project name="CyanogenMod/android_frameworks_rs" />
   <remove-project name="CyanogenMod/android_frameworks_native" />
@@ -16,7 +13,7 @@
   <remove-project name="CyanogenMod/android_external_tinycompress" />
  <remove-project name="CyanogenMod/android_system_vold" />
 
-
+  <project path="external/stlport" name="LineageOS/android_external_stlport" revision="cm-13.0" />
   <project path="hardware/libhardware_legacy" name="sandstranger/android_hardware_libhardware_legacy_mtk" groups="pdk" remote="cm" />
   <project path="external/tinyalsa" name="sandstranger/android_external_tinyalsa" groups="pdk" remote="cm" />
   <project path="external/tinycompress" name="sandstranger/android_external_tinycompress_mtk" groups="pdk" remote="cm" />
@@ -26,10 +23,7 @@
   <project path="frameworks/base" name="sandstranger/android_frameworks_base"  remote="aicp" />
   <project path="frameworks/av" name="sandstranger/android_frameworks_av_mtk" groups="pdk" remote="cm" />
   <project path="frameworks/native" name="sandstranger/android_frameworks_native_mtk" groups="pdk" remote="cm" />
-  <project path="frameworks/opt/net/ims" name="xen0n/android_frameworks_opt_net_ims_mtk" groups="frameworks_ims,pdk-cw-fs,pdk-fs" remote="cm" />
   <project path="frameworks/opt/telephony" name="sandstranger/android_frameworks_opt_telephony_mtk" groups="pdk" remote="aicp" />
-  <project path="packages/services/Telecomm" name="sandstranger/android_packages_services_Telecomm_mtk" remote="aicp" />
-  <project path="packages/services/Telephony" name="sandstranger/android_packages_services_Telephony_mtk" remote="aicp" />
   <project path="system/netd" name="xen0n/android_system_netd_mtk" groups="pdk" remote="cm" />
   <!-- vim:set ai et ts=2 sw=2 sts=2 fenc=utf-8: -->
 </manifest>

@@ -30,10 +30,11 @@ import android.os.SystemProperties;
 import android.provider.Settings;
 import android.provider.Settings.Global;
 
-import android.telephony.Rlog;
 import android.telephony.TelephonyManager;
+import android.telephony.Rlog;
 
 import com.android.internal.telephony.MtkEccList;
+
 
 /**
  * Custom wrapper for MTK requests
@@ -60,23 +61,18 @@ public class MT6753 extends RIL implements CommandsInterface {
 
     private int[] dataCallCids = { -1, -1, -1, -1, -1 };
 
-    //private Context mContext;
+    private Context mContext;
     private TelephonyManager mTelephonyManager;
     private MtkEccList mEccList;
 
     public MT6753(Context context, int preferredNetworkType, int cdmaSubscription) {
         super(context, preferredNetworkType, cdmaSubscription, null);
-        //mContext = context;
-        Rlog.i("MT6753", "Ctor1: context is " + mContext);
-        mTelephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-        mEccList = new MtkEccList();
     }
 
     public MT6753(Context context, int preferredNetworkType,
             int cdmaSubscription, Integer instanceId) {
         super(context, preferredNetworkType, cdmaSubscription, instanceId);
-        //mContext = context;
-        Rlog.i("MT6753", "Ctor2: context is " + mContext);
+        mContext = context;
         mTelephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         mEccList = new MtkEccList();
     }
@@ -99,7 +95,7 @@ public class MT6753 extends RIL implements CommandsInterface {
 
     @Override
     protected void
-    processUnsolicited (Parcel p, int type) {
+    processUnsolicited (Parcel p) {
         Object ret;
         int dataPosition = p.dataPosition(); // save off position within the Parcel
         int response = p.readInt();
@@ -115,7 +111,7 @@ public class MT6753 extends RIL implements CommandsInterface {
                 // Rewind the Parcel
                 p.setDataPosition(dataPosition);
                 // Forward responses that we are not overriding to the super class
-                super.processUnsolicited(p, type);
+                super.processUnsolicited(p);
                 return;
         }
         switch(response) {
@@ -276,8 +272,8 @@ public class MT6753 extends RIL implements CommandsInterface {
 
     @Override
     public void
-    setupDataCall(int radioTechnology, int profile, String apn,
-            String user, String password, int authType, String protocol,
+    setupDataCall(String radioTechnology, String profile, String apn,
+            String user, String password, String authType, String protocol,
             Message result) {
         int interfaceId=0;
         RILRequest rr
@@ -285,12 +281,12 @@ public class MT6753 extends RIL implements CommandsInterface {
 
         rr.mParcel.writeInt(8); //bumped by one
 
-        rr.mParcel.writeString(Integer.toString(radioTechnology + 2));
-        rr.mParcel.writeString(Integer.toString(profile));
+        rr.mParcel.writeString(radioTechnology);
+        rr.mParcel.writeString(profile);
         rr.mParcel.writeString(apn);
         rr.mParcel.writeString(user);
         rr.mParcel.writeString(password);
-        rr.mParcel.writeString(Integer.toString(authType));
+        rr.mParcel.writeString(authType);
         rr.mParcel.writeString(protocol);
 
         /* Find the first available interfaceId */
@@ -397,7 +393,7 @@ public class MT6753 extends RIL implements CommandsInterface {
     // Solicited request handling
     @Override
     protected RILRequest
-    processSolicited (Parcel p, int type) {
+    processSolicited (Parcel p) {
         int serial, error;
         int dataPosition = p.dataPosition(); // save off position within the Parcel
         serial = p.readInt();
@@ -438,7 +434,7 @@ public class MT6753 extends RIL implements CommandsInterface {
             p.setDataPosition(dataPosition);
 
             // Forward responses that we are not overriding to the super class
-            return super.processSolicited(p, type);
+            return super.processSolicited(p);
         }
 
 
@@ -516,4 +512,5 @@ public class MT6753 extends RIL implements CommandsInterface {
         }
         super.iccIOForApp(command, fileid, path, p1, p2, p3, data, pin2, aid, result);
     }
+
 }

@@ -56,6 +56,8 @@ PRODUCT_COPY_FILES += \
 # Keyboard layout
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/configs/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl \
+     $(LOCAL_PATH)/configs/mtk-tpd.kl:system/usr/keylayout/mtk-tpd.kl \
+     $(LOCAL_PATH)/configs/mtk-tpd-kpd.kl:system/usr/keylayout/mtk-tpd-kpd.kl \
      $(LOCAL_PATH)/configs/ACCDET.kl:system/usr/keylayout/ACCDET.kl \
      $(LOCAL_PATH)/configs/AVRCP.kl:system/usr/keylayout/AVRCP.kl
 
@@ -215,9 +217,8 @@ PRODUCT_PACKAGES += \
 
 # FMRadio
 PRODUCT_PACKAGES += \
-    FmRadio \
-    libmtkplayer
-
+    libfmjni \
+    FMRadio
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -240,7 +241,28 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     YGPS
 
+# RIL
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.kernel.android.checkjni=0 \
+    ro.telephony.ril_class=MT6753 \
+    ro.telephony.ril.config=fakeiccid \
+    ro.com.android.mobiledata=false
+
+# Power
+PRODUCT_PACKAGES += \
+    power.default \
+    power.mt6752
     
+# Display
+PRODUCT_PACKAGES += \
+    libion
+
+PRODUCT_PACKAGES += \
+    libtinyalsa
+
+ PRODUCT_PACKAGES += \
+    libtinycompress
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck \

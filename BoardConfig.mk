@@ -113,6 +113,13 @@ BOARD_MEDIATEK_USES_GPS := true
 MTK_FM_SUPPORT :=true
 MTK_FM_RX_SUPPORT :=true
 
+#ril
+BOARD_RIL_CLASS := ../../../device/jiayu/s3_h560/ril
+BOARD_CONNECTIVITY_MODULE := conn_soc
+
+SIM_COUNT := 2
+PRODUCT_PROPERTY_OVERRIDES += ro.telephony.sim.count=$(SIM_COUNT)
+
 # Consumerir
 MTK_IRTX_SUPPORT :=true
 

@@ -13,7 +13,7 @@
   <remove-project name="CyanogenMod/android_external_tinycompress" />
  <remove-project name="CyanogenMod/android_system_vold" />
 
-  <project path="external/stlport" name="LineageOS/android_external_stlport" revision="cm-13.0" />
+  <project path="external/stlport" name="LineageOS/android_external_stlport" remote="cm" revision="cm-13.0" />
   <project path="hardware/libhardware_legacy" name="sandstranger/android_hardware_libhardware_legacy_mtk" groups="pdk" remote="cm" />
   <project path="external/tinyalsa" name="sandstranger/android_external_tinyalsa" groups="pdk" remote="cm" />
   <project path="external/tinycompress" name="sandstranger/android_external_tinycompress_mtk" groups="pdk" remote="cm" />

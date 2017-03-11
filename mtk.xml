@@ -6,10 +6,13 @@
   <remove-project name="LineageOS/android_system_netd" />
   <remove-project name="AICP/frameworks_native" />
   <remove-project name="AICP/frameworks_av" />
- 
+  <remove-project name="LineageOS/android_bionic" />
+
   <project path="external/stlport" name="LineageOS/android_external_stlport" revision="cm-14.1" />
+  <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" revision="cm-14.1" />
+  <project path="bionic" name="sandstranger/android_bionic_mtk" groups="pdk" />
   <project path="system/core" name="sandstranger/android_system_core_mtk" groups="pdk" remote="aicp" />
-  <project path="frameworks/av" name="sandstranger/android_frameworks_av_mtk" groups="pdk" remote="aicp" />
+  <project path="frameworks/av" name="sandstranger/android_frameworks_av_mtk" groups="pdk" remote="aicp"  />
   <project path="frameworks/native" name="sandstranger/android_frameworks_native_mtk" groups="pdk" remote="aicp" />
   <project path="frameworks/opt/telephony" name="sandstranger/android_frameworks_opt_telephony_mtk" groups="pdk" />
   <project path="system/netd" name="sandstranger/android_system_netd_mtk" groups="pdk"/>

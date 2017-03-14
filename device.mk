@@ -33,6 +33,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     asec_helper
 
+# Hack to fix asec on emulated sdcard
+PRODUCT_PACKAGES += \
+    libbt-vendor
+
 # Audio
 PRODUCT_PACKAGES += \
     audio_policy.default \
